@@ -7,10 +7,10 @@ defmodule GitHub do
 
   def process_request_headers(headers) do
     # Allways send Accept header acording to Github API docs.
-    Enum.into(headers, [Accept: "application/vnd.github.v3+json"])
+    Enum.into(headers, Accept: "application/vnd.github.v3+json")
   end
 
   def process_response_body(body) do
-    body |> Poison.decode!
+    body |> Poison.decode!()
   end
 end
